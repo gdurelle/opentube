@@ -3,8 +3,8 @@ ruby '2.2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use Postgres as the database for Active Record
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -37,6 +37,10 @@ gem 'foreman', '~> 0.76.0'
 gem "bower-rails", "~> 0.9.2"
 gem 'slim-rails', '~> 3.0.1'
 
+gem 'carrierwave', '~> 0.10.0'
+gem 'carrierwave-video', '~> 0.5.6'
+gem 'carrierwave-video-thumbnailer', '~> 0.1.4'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -53,6 +57,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'quiet_assets'
   gem 'guard', '~> 2.11.1'
   gem 'guard-spring'
   gem 'guard-rspec', require: false

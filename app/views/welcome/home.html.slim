@@ -1,2 +1,15 @@
 h1 Welcome#home
 p Find me in app/views/welcome/home.html.slim
+- @videos.each do |video|
+  = video.to_json
+
+= form_for @video, :html => {:multipart => true} do |f|
+  p
+    = image_tag(@uvideo.thumbnail_url) if @video.thumbnail?
+    = f.file_field :video
+  / p
+  /   label
+  /     = f.check_box :remove_video
+  /     | Remove
+
+  = f.submit

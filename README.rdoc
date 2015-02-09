@@ -1,43 +1,34 @@
-== README
+# Informations
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby **2.2.0**
+* Rails **4.2.0**
 
-Things you may want to cover:
+## Install & Configuration
 
-* Ruby version 2.2.0
+* <code>bundle install</code>
+* <code>rake db:create</code>
+* <code>rake db:migrate</code>
 
-* Rails version 4.2.0
-
-* Run the app locally
-
-  <code>foreman start</code>
-
-* Configuration
-
-  <code>bundle install</code>
-
-* Database creation
-
-  <code>rake db:createtion</code>
-
-* Database initialization
-
-  <code>rake db:migrate</code>
-
-* How to run the test suite
-
+### How to run the test suite
   <code>guard</code>
 
-* System dependencies
+### Run the app locally
+  <code>foreman start</code>
 
-  * brew install ffmpeg --with-faac
-  * brew install ffmpegthumbnailer
+## System dependencies
+  * <code>brew install ffmpeg --with-faac</code>
+  * <code>brew install ffmpegthumbnailer</code>
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services
 
-* Deployment instructions
+Job queues : sidekiq
+
+cache servers, search engines, etc.
+
+## Deployment instructions
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+# Roadmap
+* Background processing videos for performances
+* Fast upload UX (plupload ?)
+* bootstrap or foundation ? (most accessible ? better semantic ?)

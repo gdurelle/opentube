@@ -6,6 +6,8 @@ class VideoUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
+  CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
+
   # Choose what kind of storage to use for this uploader:
   storage :file
   # storage :fog
@@ -16,7 +18,12 @@ class VideoUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
+  def save_title
+    model.title = original_filename
+  end
+
   version :mp4 do
+    process :save_title
     process encode_video: [:mp4]
   end
 

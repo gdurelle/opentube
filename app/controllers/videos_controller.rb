@@ -1,11 +1,11 @@
 class VideosController < ApplicationController
   def create
     video = Video.new(video_attributes)
-    video.save!
-    # u.avatar.url # => '/url/to/file.png'
-    # u.avatar.current_path # => 'path/to/file.png'
-    # u.avatar.identifier # => 'file.png'
-
+    if video.valid? && video.save!
+      flash[:notice] = 'YEAH'
+    else
+      flash[:error] = video.errors.full_messages.join(', ')
+    end
     redirect_to root_path
   end
 

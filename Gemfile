@@ -40,6 +40,7 @@ gem 'slim-rails', '~> 3.0.1'
 gem 'carrierwave', '~> 0.10.0'
 gem 'carrierwave-video', '~> 0.5.6'
 gem 'carrierwave-video-thumbnailer', '~> 0.1.4'
+gem 'rmagick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

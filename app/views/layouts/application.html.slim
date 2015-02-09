@@ -9,7 +9,7 @@ html
 
     .container
       - flash.each do |type, message|
-        .alert.alert-dismissable class="#{twitter_alert_type(type)}" role='status'
+        .alert.alert-dismissable role='status'
           a.close href="#" data-dismiss="alert" aria-hidden='true' ×
           = raw message
 

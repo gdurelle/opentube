@@ -192,6 +192,7 @@ GEM
     rdoc (4.2.0)
     rename (1.0.2)
       rails (>= 3.0.0)
+    rmagick (2.13.4)
     rspec (3.2.0)
       rspec-core (~> 3.2.0)
       rspec-expectations (~> 3.2.0)
@@ -307,6 +308,7 @@ DEPENDENCIES
   quiet_assets
   rails (= 4.2.0)
   rename
+  rmagick
   rspec-rails (~> 3.2.0)
   rubocop (~> 0.28.0)
   sass-rails (~> 5.0)

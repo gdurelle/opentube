@@ -6,7 +6,9 @@ p Find me in app/views/welcome/home.html.slim
 hr
 - @videos.each do |video|
   p= image_tag video.video.thumb
-  p= image_tag video.title
-  p= video.video.url
+  p
+    strong= image_tag video.title
+  p
+    small= video.video.url
 
   p= video.to_json

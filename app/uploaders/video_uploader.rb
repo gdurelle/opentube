@@ -12,6 +12,14 @@ class VideoUploader < CarrierWave::Uploader::Base
   storage :file
   # storage :fog
 
+  def move_to_cache
+    true
+  end
+
+  def move_to_store
+    true
+  end
+
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir

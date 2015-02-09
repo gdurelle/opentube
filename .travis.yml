@@ -1,4 +1,6 @@
-script: bundle exec rake spec
+script:
+  - bundle exec rake spec
+  - bundle exec rubocop -R --config .rubocop.yml --fail-level error
 language: ruby
 cache: bundler
 bundler_args: --without development

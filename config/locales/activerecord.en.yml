@@ -1,0 +1,9 @@
+en:
+  activerecord:
+    errors:
+      models:
+        video:
+          attributes:
+            md5hash:
+              blank: "can't be built without a video"
+              taken: "This video already exists"

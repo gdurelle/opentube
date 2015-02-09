@@ -1,5 +1,4 @@
 = form_for @video, :html => {:multipart => true} do |f|
-  = f.text_field :dummy, hidden: true, value: ''
   p
     / = image_tag(@video.video.thumb_url) if @video.video.thumb?
     = f.file_field :video, required: true

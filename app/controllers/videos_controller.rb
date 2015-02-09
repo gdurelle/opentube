@@ -12,6 +12,6 @@ class VideosController < ApplicationController
   private
 
   def video_attributes
-    params.require(:video).permit(:video, :original_filename, :content_type, :headers)
+    params.require(:video).permit(:video)
   end
 end

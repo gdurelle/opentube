@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gdurelle/opentube.svg)](https://travis-ci.org/gdurelle/opentube)
+
 # Informations
 
 * Ruby **2.2.0**

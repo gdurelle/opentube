@@ -47,7 +47,7 @@ class VideoUploader < CarrierWave::Uploader::Base
   end
 
   def extension_white_list
-    %w(mov avi mp4 mkv wmv mpg)
+    %w(mov avi mp4 mkv wmv mpg webm ogv)
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:

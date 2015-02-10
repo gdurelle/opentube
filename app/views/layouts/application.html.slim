@@ -5,6 +5,15 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
+    javascript:
+      window.addEventListener('DOMContentLoaded', function(event) {
+          videojs(video.getAttribute('id'), { preload: 'auto' }, function () {
+             this.addClass('video-js');
+             this.addClass('vjs-default-skin');
+         });
+      }, false);
+
   body
 
     .container

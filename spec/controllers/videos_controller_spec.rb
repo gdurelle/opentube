@@ -7,5 +7,18 @@ RSpec.describe VideosController, type: :controller do
       post :create, video: { video: fixture_file_upload('spec/fixtures/lorem_ipsum.mov') }
       expect(response).to redirect_to root_path
     end
+    context "when video already exists" do
+      it "redirects to root_path with a flash of errors" do
+        post :create, video: { video: fixture_file_upload('spec/fixtures/lorem_ipsum.mov') }
+        post :create, video: { video: fixture_file_upload('spec/fixtures/lorem_ipsum.mov') }
+        expect(response).to redirect_to root_path
+      end
+    end
+    context "with bad params" do
+      it "redirects to root_path with a flash of errors" do
+        post :create, video: { video: 'plop' }
+        expect(response).to redirect_to root_path
+      end
+    end
   end
 end

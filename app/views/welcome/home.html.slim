@@ -3,20 +3,12 @@ p Find me in app/views/welcome/home.html.slim
 
 = render partial: 'videos/form'
 
-hr
-- @videos.each do |video|
-  p= image_tag video.video.thumb
-  p
-    strong= image_tag video.title
-  p
-    small= video.video.url
-
-  p= video.to_json
-
+- if @current_video.present?
+  hr
   p
     #player
       video#video controls="controls" height="480" width="640"
-        source src="#{video.video.mp4}" type="video/mp4"
+        source src="#{@current_video.video.mp4}" type="video/mp4"
         / source src="client/medias/video_vo.webm" type="video/webm"
         / source src="client/medias/video_vo.ogv" type="video/ogg"
 
@@ -33,3 +25,11 @@ hr
       / audiodescription
       / audio hidden="hidden" preload="auto" src=""
       / audio hidden="hidden" preload="auto" src="client/medias/video_ad.mp3"
+
+
+hr
+- @videos.each do |video|
+  p
+    strong= video.title
+    br
+    = link_to image_tag(video.video.thumb), video_path(video)

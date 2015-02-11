@@ -1,14 +1,6 @@
 = form_for @video, :html => {:multipart => true} do |f|
   p
-    / = image_tag(@video.video.thumb_url) if @video.video.thumb?
+    = f.label :video
     = f.file_field :video, required: true
-  / p
-  /   label
-  /     = f.check_box :remove_video
-  /     | Remove
-
-  / # u.avatar.url # => '/url/to/file.png'
-  / # u.avatar.current_path # => 'path/to/file.png'
-  / # u.avatar.identifier # => 'file.png'
 
   = f.submit data: { disable_with: 'Uploading, please wait...' }

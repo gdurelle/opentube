@@ -1,0 +1,23 @@
+h1= @video.title
+p
+  #player
+    video#video controls="controls" width="800" height="540"
+      source src="#{@video.video.mp4}" type="video/mp4"
+      / source src="client/medias/video_vo.webm" type="video/webm"
+      / source src="client/medias/video_vo.ogv" type="video/ogg"
+
+      / subtitles
+      / track kind="captions" label="Français" src="client/captions/fr.srt" srclang="fr"
+
+      / transcription
+      / ul.transcriptlist
+      /   li
+      /     a href="mytrancriptFile.htm" title=("Transcription française - HTML - nouvelle fenêtre")  Transcription française - HTML
+      /   li
+      /     a href="server/transcriptions/fr.txt" title=("Transcription du sous-titrage - TXT")  Transcription du sous-titrage - TXT
+
+    / audiodescription
+    / audio hidden="hidden" preload="auto" src=""
+    / audio hidden="hidden" preload="auto" src="client/medias/video_ad.mp3"
+
+p= link_to 'Back', root_path
